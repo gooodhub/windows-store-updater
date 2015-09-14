@@ -15,3 +15,6 @@ Outil d'installation et de mise à jour à distance d'application Windows 8/Wind
         [DataMember]
         public string DownloadUrl { get; set; } // Url où download le fichier
         // Par exemple DownloadUrl = "http://goood-api.fr/immotouch/1.5.0.6/download"
+        
+        
+#Ensuite, il vous faudra configurer le fichier de paramètres
