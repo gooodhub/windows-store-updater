@@ -1,0 +1,1 @@
+﻿(Get-WindowsDeveloperLicense | Where-Object { $_.IsValid }).Count -gt 0

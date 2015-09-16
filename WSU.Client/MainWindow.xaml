@@ -1,0 +1,58 @@
+﻿<Window x:Class="WSU.Client.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:converters="clr-namespace:WSU.Client.Converters" Icon="Serexim_150x150.scale-100.ico"
+        Title="Windows Store Updater" Height="280" Width="525"
+        ResizeMode="NoResize">
+    <Window.Resources>
+        <converters:BoolToVisibilityConverter x:Key="BoolToCollapsedConverter"/>
+        <converters:BoolToRedGreenConverter x:Key="BoolToRedGreenConverter"/>
+        <converters:BoolToNotEnabledConverter x:Key="BoolToNotEnabledConverter" />
+    </Window.Resources>
+    <Grid>
+        <!--<Menu IsMainMenu="True" Visibility="Hidden">
+            <MenuItem Header="Options">
+                <MenuItem Header="Afficher options avancées" IsCheckable="True" x:Name="AdvancedDisplay"/>
+            </MenuItem>
+        </Menu>-->
+        <DockPanel Margin="10, 10, 10, 0">
+            <TextBlock Text="Windows Store Updater" FontSize="24" DockPanel.Dock="Top"/>
+            <TextBlock DockPanel.Dock="Top" Text="Cette application vous permet de mettre à jour Immotouch."/>
+            <Grid DockPanel.Dock="Top" Margin="0, 5, 0, 0" >
+                <ProgressBar Height="50" x:Name="Bar" IsIndeterminate="False"/>
+                <TextBlock Text="" x:Name="StatusTextBlock" DockPanel.Dock="Top" FontSize="20" VerticalAlignment="Center" HorizontalAlignment="Center" TextAlignment="Center"/>
+            </Grid>
+            <!--<TextBlock Text="Une nouvelle version est disponible à l'installation" FontSize="18" Foreground="Red" DockPanel.Dock="Top"/>-->
+            <!--<DockPanel Dock="Top" Visibility="{Binding Path=IsChecked, ElementName=AdvancedDisplay, Converter={StaticResource BoolToCollapsedConverter}}">
+                <TextBlock DockPanel.Dock="Left" Text="Appx :" Width="50"/>
+                <TextBox x:Name="PathBox" DockPanel.Dock="Right" Text=""/>
+            </DockPanel>
+            <DockPanel Dock="Top" Visibility="{Binding Path=IsChecked, ElementName=AdvancedDisplay, Converter={StaticResource BoolToCollapsedConverter}}">
+                <TextBlock DockPanel.Dock="Left" Text="Certif :" Width="50"/>
+                <TextBox x:Name="CertifBox" DockPanel.Dock="Right" Text=""/>
+            </DockPanel>-->
+            <Grid DockPanel.Dock="Top" HorizontalAlignment="Center" Margin="0, 10, 0, 0" Width="430">
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <StackPanel Grid.Row="0" Grid.Column="0" Grid.RowSpan="2">
+                    <TextBlock FontSize="16" Text="{Binding MessageVersionActuelle}"/>
+                    <TextBlock FontSize="16" Text="{Binding MessageVersionAPI}" Foreground="{Binding VersionOk, Converter={StaticResource BoolToRedGreenConverter}}"/>
+                </StackPanel>
+                <TextBlock Grid.Row="1" Grid.Column="1" DockPanel.Dock="Top" FontSize="16" x:Name="VersionTextBlock" 
+                       Foreground="{Binding VersionOk, Converter={StaticResource BoolToRedGreenConverter}}"
+                       Text="{Binding DisplayMessage}" TextAlignment="Right"/>
+            </Grid>
+            <DockPanel DockPanel.Dock="Bottom" HorizontalAlignment="Center" Width="430">
+                <Button x:Name="InstallButton" Content="Installer" DockPanel.Dock="Left" Height="50" Width="230" Click="InstallButton_OnClick"
+                        IsEnabled="{Binding VersionOk, Converter={StaticResource BoolToNotEnabledConverter}}"/>
+                <Button DockPanel.Dock="Right" Height="50" Width="150" Content="Vérifier les mises à jour"
+                        Click="CheckNewVersion_OnClick" HorizontalAlignment="Right"/>
+            </DockPanel>
+        </DockPanel>
+    </Grid>
+</Window>

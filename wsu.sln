@@ -1,0 +1,62 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.31101.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WSU.Models", "WSU.Models\WSU.Models.csproj", "{6A1D2688-680C-4A3F-9501-B5C6A1D5754D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WSU.Services", "WSU.Services\WSU.Services.csproj", "{AB4B47FF-0B29-4119-9A40-AE0537AD0507}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WSU.Client", "WSU.Client\WSU.Client.csproj", "{54D5ABD2-6897-4B39-8173-108AA6EC0768}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{F45F7B78-F54A-42FB-ABAB-0F8B932EF8E0}"
+	ProjectSection(SolutionItems) = preProject
+		.nuget\NuGet.Config = .nuget\NuGet.Config
+		.nuget\NuGet.exe = .nuget\NuGet.exe
+		.nuget\NuGet.targets = .nuget\NuGet.targets
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "PublishScripts", "PublishScripts", "{0B832925-C799-4305-9151-322FB24A20E7}"
+	ProjectSection(SolutionItems) = preProject
+		PublishScripts\AzureWebsitePublishModule.psm1 = PublishScripts\AzureWebsitePublishModule.psm1
+		PublishScripts\Publish-WebApplicationWebsite.ps1 = PublishScripts\Publish-WebApplicationWebsite.ps1
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Configurations", "Configurations", "{3950112D-8BFE-4391-B0EC-6B923D4DC9A8}"
+	ProjectSection(SolutionItems) = preProject
+		PublishScripts\Configurations\ClickOnceDeploy-WAWS-dev.json = PublishScripts\Configurations\ClickOnceDeploy-WAWS-dev.json
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		CI-Test|Any CPU = CI-Test|Any CPU
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6A1D2688-680C-4A3F-9501-B5C6A1D5754D}.CI-Test|Any CPU.ActiveCfg = CI-Test|Any CPU
+		{6A1D2688-680C-4A3F-9501-B5C6A1D5754D}.CI-Test|Any CPU.Build.0 = CI-Test|Any CPU
+		{6A1D2688-680C-4A3F-9501-B5C6A1D5754D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6A1D2688-680C-4A3F-9501-B5C6A1D5754D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6A1D2688-680C-4A3F-9501-B5C6A1D5754D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6A1D2688-680C-4A3F-9501-B5C6A1D5754D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AB4B47FF-0B29-4119-9A40-AE0537AD0507}.CI-Test|Any CPU.ActiveCfg = CI-Test|Any CPU
+		{AB4B47FF-0B29-4119-9A40-AE0537AD0507}.CI-Test|Any CPU.Build.0 = CI-Test|Any CPU
+		{AB4B47FF-0B29-4119-9A40-AE0537AD0507}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AB4B47FF-0B29-4119-9A40-AE0537AD0507}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AB4B47FF-0B29-4119-9A40-AE0537AD0507}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AB4B47FF-0B29-4119-9A40-AE0537AD0507}.Release|Any CPU.Build.0 = Release|Any CPU
+		{54D5ABD2-6897-4B39-8173-108AA6EC0768}.CI-Test|Any CPU.ActiveCfg = CI-Test|Any CPU
+		{54D5ABD2-6897-4B39-8173-108AA6EC0768}.CI-Test|Any CPU.Build.0 = CI-Test|Any CPU
+		{54D5ABD2-6897-4B39-8173-108AA6EC0768}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{54D5ABD2-6897-4B39-8173-108AA6EC0768}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{54D5ABD2-6897-4B39-8173-108AA6EC0768}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{54D5ABD2-6897-4B39-8173-108AA6EC0768}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{3950112D-8BFE-4391-B0EC-6B923D4DC9A8} = {0B832925-C799-4305-9151-322FB24A20E7}
+	EndGlobalSection
+EndGlobal
