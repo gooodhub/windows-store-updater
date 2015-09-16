@@ -1,8 +1,6 @@
 # windows-store-updater
 Outil d'installation et de mise à jour à distance d'application Windows 8/Windows 8.1
 
-
-# Comment l'installer
 # Se connecter à une API renvoyant le modèle JSON au format suivant : 
         [DataMember]
         public string Version { get; set; } // Numéro de version du package à installer
