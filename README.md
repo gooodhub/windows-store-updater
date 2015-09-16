@@ -19,7 +19,7 @@ Outil d'installation et de mise à jour à distance d'application Windows 8/Wind
 # Activez la restauration des packages nugets
 1. Faites un clic droit sur votre solution "wsu" puis "Activer la restauration des packages nugets"
         
-# Ensuite, il vous faudra créer le fichier settings.config
+# Créez le fichier settings.config
 1. Copiez le fichier settings.config.sample présent sous WSU.CLIENT\Exploitation
 2. Retirez l'extension .sample et modifiez les clés de valeur pour faire correspondre à votre API
 
