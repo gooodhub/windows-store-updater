@@ -25,7 +25,7 @@ namespace WSU.Client
         protected static readonly string Url = ConfigurationManager.AppSettings["api:url"];
         protected static readonly string CdmId = ConfigurationManager.AppSettings["api:id"];
         protected static readonly string ApiKey = ConfigurationManager.AppSettings["api:key"];
-        protected static readonly string PackageName = ConfigurationManager.AppSettings["immotouch:package"];
+        protected static readonly string PackageName = ConfigurationManager.AppSettings["windowsApp:package"];
 
         private readonly MainWindowViewModel _vm;
         private HmacAuthWebApiClient _client;
@@ -53,7 +53,7 @@ namespace WSU.Client
         private async Task CheckNewVersion()
         {
             string scripts = Path.Combine(Environment.CurrentDirectory, "Scripts");
-            ImmotouchInstallService service = new ImmotouchInstallService(scripts);
+            InstallService service = new InstallService(scripts);
 
             _vm.CurrentVersion = service.GetInstalledVersion(PackageName);
             _client = new HmacAuthWebApiClient(Url, CdmId, ApiKey);
@@ -99,7 +99,7 @@ namespace WSU.Client
         {
             _logger.Info("Lancement de l'installation");
 
-            string saveFolder = ConfigurationManager.AppSettings["immotouch:downloadFolder"];
+            string saveFolder = ConfigurationManager.AppSettings["windowsApp:downloadFolder"];
             string myDocuments = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
             string savePath = Path.Combine(myDocuments, saveFolder);
             string userProfileFolder = Environment.GetFolderPath(Environment.SpecialFolder.UserProfile);
@@ -108,9 +108,9 @@ namespace WSU.Client
             {
                 progress.Report(0);
                 string applicationDataFolder = Path.Combine(userProfileFolder,
-                    ConfigurationManager.AppSettings["immotouch:pathToBackup"]);
+                    ConfigurationManager.AppSettings["windowsApp:pathToBackup"]);
                 string applicationDataZip = Path.Combine(myDocuments,
-                    ConfigurationManager.AppSettings["immotouch:backupDestination"]);
+                    ConfigurationManager.AppSettings["windowsApp:backupDestination"]);
 
                 progress.Report(10);
 
@@ -123,7 +123,7 @@ namespace WSU.Client
                 Directory.CreateDirectory(savePath);
 
                 string scripts = Path.Combine(Environment.CurrentDirectory, "Scripts");
-                ImmotouchInstallService service = new ImmotouchInstallService(scripts);
+                InstallService service = new InstallService(scripts);
 
                 progress.Report(20);
 

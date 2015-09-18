@@ -16,7 +16,7 @@
         </Menu>-->
         <DockPanel Margin="10, 10, 10, 0">
             <TextBlock Text="Windows Store Updater" FontSize="24" DockPanel.Dock="Top"/>
-            <TextBlock DockPanel.Dock="Top" Text="Cette application vous permet de mettre à jour Immotouch."/>
+            <TextBlock DockPanel.Dock="Top" Text="Cette application vous permet de mettre à jour votre application Modern Ui."/>
             <Grid DockPanel.Dock="Top" Margin="0, 5, 0, 0" >
                 <ProgressBar Height="50" x:Name="Bar" IsIndeterminate="False"/>
                 <TextBlock Text="" x:Name="StatusTextBlock" DockPanel.Dock="Top" FontSize="20" VerticalAlignment="Center" HorizontalAlignment="Center" TextAlignment="Center"/>
